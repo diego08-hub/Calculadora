@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 double sumar(double a, double b) {
@@ -20,16 +21,25 @@ double dividir(double a, double b) {
     }
     return a / b;
 }
+double raiz_cuadrada(double a) {
+    if (a < 0) {
+        cout << "Error: no se puede sacar raiz de un numero negativo" << endl;
+        return 0;
+    }
+    return sqrt(a);
+}
 
 int main() {
     double a, b;
     char operacion;
 
-    cout << "Ingrese el primer numero: ";
+    // Version de prueba - comentario temporal
+	
+    cout << "Ingrese el primer numero (a): ";
     cin >> a;
-    cout << "Ingrese el segundo numero: ";
+    cout << "Ingrese el segundo numero (b): ";
     cin >> b;
-    cout << "Ingrese la operacion (+, -, *, /): ";
+    cout << "Ingrese la operacion (+, -, *, /, r=raiz de a): ";
     cin >> operacion;
 
     double resultado;
@@ -47,6 +57,9 @@ int main() {
         case '/':
             resultado = dividir(a, b);
             break;
+	case 'r':
+	    resultado = raiz_cuadrada(a);
+	    break;
         default:
             cout << "Operacion no valida" << endl;
             return 1;
