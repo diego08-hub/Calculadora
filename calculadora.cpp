@@ -33,7 +33,7 @@ int main() {
     double a, b;
     char operacion;
 
-    // Version de prueba - comentario temporal
+    
 	
     cout << "Ingrese el primer numero (a): ";
     cin >> a;
